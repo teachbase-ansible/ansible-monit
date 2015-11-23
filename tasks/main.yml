@@ -1,0 +1,20 @@
+---
+- name: Monit | Make sure monit is installed
+  apt:
+    pkg: monit
+    state: present
+
+- name: Monit | Update the monit configuration (/etc/monit/monitrc)
+  template:
+    src: "monitrc.j2"
+    dest: "/etc/monit/monitrc"
+  notify:
+    - restart monit
+
+- name: Monit | Update configs for services
+  template:
+    src: "{{ item }}"
+    dest: "/etc/monit/conf.d/"
+  with_items: "{{ monit.configs }}"
+  notify:
+    - restart monit
