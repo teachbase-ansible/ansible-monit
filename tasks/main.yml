@@ -13,8 +13,8 @@
 
 - name: Monit | Update configs for services
   template:
-    src: "{{ item }}"
-    dest: "/etc/monit/conf.d/"
+    src: "{{ item.path }}"
+    dest: "/etc/monit/conf.d/{{ item.name }}"
   with_items: "{{ monit.configs }}"
   notify:
     - restart monit
