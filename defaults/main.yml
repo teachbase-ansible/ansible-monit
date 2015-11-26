@@ -23,7 +23,7 @@ monit:
   mailserver_timeout: 60
 
   port: 3737
-  address: "localhost"
+  #address: "localhost"
   allow: ["localhost"]
   # username:
   # password:
