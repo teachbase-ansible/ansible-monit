@@ -25,4 +25,4 @@ monit:
   ssl: no
   cert: "/etc/monit/monit.pem"
   monitors_sshd_port: 22
-  configs: []
+  configs: [{name: "puma", path: "templates/monit/puma.j2"}]
