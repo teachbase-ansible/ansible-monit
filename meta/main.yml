@@ -1,10 +1,15 @@
 ---
 galaxy_info:
-  author: Sergey Alekseenko
-  description:
-  company: Teachbase
+  author: Sergei Alekseenko
+  description: Monit configuration
   license: MIT
   min_ansible_version: 2.5
   platforms:
-    - name: Ubuntu
-dependencies: []
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+    - system
