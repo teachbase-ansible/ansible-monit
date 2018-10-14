@@ -12,9 +12,7 @@
     - restart monit
 
 - name: Monit | Update configs for services
-  template:
-    src: "{{ item.path }}"
-    dest: "/etc/monit/conf.d/{{ item.name }}"
+  template: src={{ item.path }} dest=/etc/monit/conf.d/{{ item.name }} force=yes
   with_items: "{{ monit.configs }}"
   notify:
     - restart monit

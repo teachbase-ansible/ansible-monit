@@ -2,26 +2,21 @@
 monit:
   email_enable: yes
   notify_email: "me@localhost"
-
   logfile: "syslog facility log_daemon"
-
   poll_period: 60
   poll_start_delay: 120
   eventqueue_enable: yes
   eventqueue_directory: "/var/lib/monit/events"
   eventque_slots: 100
-
   mailformat_from: "monit@{{inventory_hostname}}"
   mailformat_subject: "$SERVICE $EVENT"
   mailformat_message: "Monit $ACTION $SERVICE at $DATE on $HOST: $DESCRIPTION."
-
   mailserver_host: "localhost"
   # mailserver_port:
   # mailserver_username:
   # mailserver_password:
   # mailserver_encryption:
   mailserver_timeout: 60
-
   port: 3737
   #address: "localhost"
   allow: ["localhost"]
@@ -29,7 +24,5 @@ monit:
   # password:
   ssl: no
   cert: "/etc/monit/monit.pem"
-
   monitors_sshd_port: 22
-
   configs: []
